@@ -413,9 +413,14 @@ var dirtyObject = {
        _ttrs: 510852 
  } 
  function clean(obj) { 
- 	delete obj._fht;
- 	delete obj._byz;
- 	delete obj._ttrs;
+ 	// delete obj._fht;
+ 	// delete obj._byz;
+ 	// delete obj._ttrs;
+ 	for(var key in obj){
+ 		if(key.indexOf('_') === 0){
+ 			delete obj[key];
+ 		}
+ 	}
     return obj;     
  } 
  
